@@ -25,6 +25,17 @@ const Navbar = ({ isAuthenticated, isAdmin, onLogout }: NavbarProps) => {
           </Link>
 
           <div className="flex items-center gap-2">
+            <Button
+              variant={isActive('/news') ? 'default' : 'ghost'}
+              asChild
+              className="transition-all"
+            >
+              <Link to="/news">
+                <Icon name="Newspaper" size={18} className="mr-2" />
+                Новости
+              </Link>
+            </Button>
+
             {!isAuthenticated ? (
               <>
                 <Button
